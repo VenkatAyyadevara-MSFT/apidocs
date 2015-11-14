@@ -7,9 +7,6 @@ The following **scopes** are required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /groups/<objectId>/Microsoft.Graph.subscribeByMail
-POST /users/<objectId>/joinedGroups/<objectId>/Microsoft.Graph.subscribeByMail
-POST /drive/root/createdByUser/joinedGroups/<objectId>/Microsoft.Graph.subscribeByMail
-
 ```
 ### Request headers
 | Name       | Type | Description|

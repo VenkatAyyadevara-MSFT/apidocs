@@ -7,7 +7,6 @@ The following **scopes** are required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /groups
-
 ```
 ### Request headers
 | Name       | Type | Description|

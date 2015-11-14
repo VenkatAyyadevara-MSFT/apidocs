@@ -285,54 +285,50 @@ Here is a JSON representation of the resource
 |directReports|[DirectoryObject](directoryobject.md) collection|The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. |
 |drive|[drive](drive.md)| Read-only.|
 |events|[Event](event.md) collection|The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.|
-|joinedGroups|[Group](group.md) collection| Read-only. Nullable.|
 |mailFolders|[MailFolder](mailfolder.md) collection| Read-only. Nullable.|
 |manager|[DirectoryObject](directoryobject.md)|The user or contact that is this user’s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)|
 |memberOf|[DirectoryObject](directoryobject.md) collection|The groups and directory roles that the user is a member of. Read-only. Nullable.|
 |messages|[Message](message.md) collection|The messages in a mailbox or folder. Read-only. Nullable.|
-|oauth2PermissionGrants|[OAuth2PermissionGrant](oauth2permissiongrant.md) collection|The set of applications that are granted consent to impersonate this user. Read-only. Nullable. (HTTP Methods:  GET, POST, DELETE.)|
 |ownedDevices|[DirectoryObject](directoryobject.md) collection|Devices that are owned by the user. Read-only. Nullable.|
 |ownedObjects|[DirectoryObject](directoryobject.md) collection|Directory objects that are owned by the user. Read-only. Nullable.|
-|photo|[Photo](photo.md)| Read-only.|
+|photo|[Photo](photo.md)| The user's profile photo. Read-only|
 |registeredDevices|[DirectoryObject](directoryobject.md) collection|Devices that are registered for the user. Read-only. Nullable.|
 
 ### Methods
-
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[Get user](../api/user_get.md) | [user](user.md) |Read properties and relationships of user object.|
-|[Create CalendarGroup](../api/user_post_calendargroups.md) |[CalendarGroup](calendargroup.md)| Create a new CalendarGroup by posting to the calendarGroups collection.|
-|[List calendarGroups](../api/user_list_calendargroups.md) |[CalendarGroup](calendargroup.md) collection| Get a CalendarGroup object collection.|
-|[Create Event](../api/user_post_calendarview.md) |[Event](event.md)| Create a new Event by posting to the calendarView collection.|
-|[List calendarView](../api/user_list_calendarview.md) |[Event](event.md) collection| Get a Event object collection.|
-|[Create Calendar](../api/user_post_calendars.md) |[Calendar](calendar.md)| Create a new Calendar by posting to the calendars collection.|
-|[List calendars](../api/user_list_calendars.md) |[Calendar](calendar.md) collection| Get a Calendar object collection.|
-|[Create ContactFolder](../api/user_post_contactfolders.md) |[ContactFolder](contactfolder.md)| Create a new ContactFolder by posting to the contactFolders collection.|
-|[List contactFolders](../api/user_list_contactfolders.md) |[ContactFolder](contactfolder.md) collection| Get a ContactFolder object collection.|
-|[Create Contact](../api/user_post_contacts.md) |[Contact](contact.md)| Create a new Contact by posting to the contacts collection.|
-|[List contacts](../api/user_list_contacts.md) |[Contact](contact.md) collection| Get a Contact object collection.|
-|[List createdObjects](../api/user_list_createdobjects.md) |[DirectoryObject](directoryobject.md) collection| Get the directory objects created by the user from the createdObjects navigation property.|
-|[List directReports](../api/user_list_directreports.md) |[DirectoryObject](directoryobject.md) collection| Get the users and contacts that report to the user from the directReports navigation property.|
-|[Create Event](../api/user_post_events.md) |[Event](event.md)| Create a new Event by posting to the events collection.|
-|[List events](../api/user_list_events.md) |[Event](event.md) collection| Get a Event object collection.|
-|[Create Group](../api/user_post_joinedgroups.md) |[Group](group.md)| Create a new Group by posting to the joinedGroups collection.|
-|[Create MailFolder](../api/user_post_mailfolders.md) |[MailFolder](mailfolder.md)| Create a new MailFolder by posting to the mailFolders collection.|
+|[Update user](../api/user_update.md) | [User](user.md)	|Update user object. |
+|[Delete user](../api/user_delete.md) | None |Delete user object. |
+|[List messages](../api/user_list_messages.md) |[Message](message.md) collection| Get a Message object collection.|
+|[Create Message](../api/user_post_messages.md) |[Message](message.md)| Create a new Message by posting to the messages collection.|
 |[List mailFolders](../api/user_list_mailfolders.md) |[MailFolder](mailfolder.md) collection| Get a MailFolder object collection.|
+|[Create mailFolder](../api/user_post_mailfolders.md) |[MailFolder](mailfolder.md)| Create a new MailFolder by posting to the mailFolders collection.|
+|[sendMail](../api/user_sendmail.md)|None|Send a message|
+|[List events](../api/user_list_events.md) |[Event](event.md) collection| Get a Event object collection.|
+|[Create event](../api/user_post_events.md) |[Event](event.md)| Create a new Event by posting to the events collection.|
+|[List calendars](../api/user_list_calendars.md) |[Calendar](calendar.md) collection| Get a Calendar object collection.|
+|[Create calendar](../api/user_post_calendars.md) |[Calendar](calendar.md)| Create a new Calendar by posting to the calendars collection.|
+|[List calendarGroups](../api/user_list_calendargroups.md) |[CalendarGroup](calendargroup.md) collection| Get a CalendarGroup object collection.|
+|[Create calendarGroup](../api/user_post_calendargroups.md) |[CalendarGroup](calendargroup.md)| Create a new CalendarGroup by posting to the calendarGroups collection.|
+|[Create calendarView](../api/user_post_calendarview.md) |[Event](event.md)| Create a new Event by posting to the calendarView collection.|
+|[List calendarView](../api/user_list_calendarview.md) |[Event](event.md) collection| Get a Event object collection.|
+|[reminderView](../api/user_reminderview.md)|[Reminder](reminder.md) collection|Return a list of calendar reminders within the start and end times specified.|
+|[List contacts](../api/user_list_contacts.md) |[Contact](contact.md) collection| Get a Contact object collection.|
+|[Create Contact](../api/user_post_contacts.md) |[Contact](contact.md)| Create a new Contact by posting to the contacts collection.|
+|[List contactFolders](../api/user_list_contactfolders.md) |[ContactFolder](contactfolder.md) collection| Get a ContactFolder object collection.|
+|[Create ContactFolder](../api/user_post_contactfolders.md) |[ContactFolder](contactfolder.md)| Create a new ContactFolder by posting to the contactFolders collection.|
+|[List directReports](../api/user_list_directreports.md) |[DirectoryObject](directoryobject.md) collection| Get the users and contacts that report to the user from the directReports navigation property.|
 |[List manager](../api/user_list_manager.md) |[DirectoryObject](directoryobject.md) | Get the user or contact that is this user's manager from the manager navigation property.|
 |[List memberOf](../api/user_list_memberof.md) |[DirectoryObject](directoryobject.md) collection| Get the groups and directory roles that the user is a direct member of from the memberOf navigation property.|
-|[Create Message](../api/user_post_messages.md) |[Message](message.md)| Create a new Message by posting to the messages collection.|
-|[List messages](../api/user_list_messages.md) |[Message](message.md) collection| Get a Message object collection.|
 |[List ownedDevices](../api/user_list_owneddevices.md) |[DirectoryObject](directoryobject.md) collection| Get the devices that are owned by the user from the ownedDevices navigation property.|
 |[List ownedObjects](../api/user_list_ownedobjects.md) |[DirectoryObject](directoryobject.md) collection| Get the directory objects that are owned by the user from the ownedObjects navigation property.|
 |[List registeredDevices](../api/user_list_registereddevices.md) |[DirectoryObject](directoryobject.md) collection| Get the devices that are retistered for the user from the registeredDevices navigation property.|
-|[Update](../api/user_update.md) | [User](user.md)	|Update user object. |
-|[Delete](../api/user_delete.md) | None |Delete user object. |
+|[List createdObjects](../api/user_list_createdobjects.md) |[DirectoryObject](directoryobject.md) collection| Get the directory objects created by the user from the createdObjects navigation property.|
 |[assignLicense](../api/user_assignlicense.md)|[User](user.md)|Add or remove subscriptions for the user. You can also enable and disable specific plans associated with a subscription.|
 |[checkMemberGroups](../api/user_checkmembergroups.md)|String collection|Check for membership in a list of groups. The check is transitive.|
 |[getMemberGroups](../api/user_getmembergroups.md)|String collection|Return all the groups that the user is a member of. The check is transitive.|
 |[getMemberObjects](../api/user_getmemberobjects.md)|String collection| Return all of the groups and directory roles that the user is a member of. The check is transitive. |
-|[reminderView](../api/user_reminderview.md)|[Reminder](reminder.md) collection||
-|[sendMail](../api/user_sendmail.md)|None||
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

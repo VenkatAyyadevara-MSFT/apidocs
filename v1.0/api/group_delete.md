@@ -7,9 +7,6 @@ The following **scopes** are required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /groups/<objectId>
-DELETE /users/<objectId>/joinedGroups/<objectId>
-DELETE /drive/root/createdByUser/joinedGroups/<objectId>
-
 ```
 ### Request headers
 | Name       | Type | Description|

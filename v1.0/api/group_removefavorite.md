@@ -7,9 +7,6 @@ The following **scopes** are required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /groups/<objectId>/Microsoft.Graph.removeFavorite
-POST /users/<objectId>/joinedGroups/<objectId>/Microsoft.Graph.removeFavorite
-POST /drive/root/createdByUser/joinedGroups/<objectId>/Microsoft.Graph.removeFavorite
-
 ```
 ### Request headers
 | Name       | Type | Description|

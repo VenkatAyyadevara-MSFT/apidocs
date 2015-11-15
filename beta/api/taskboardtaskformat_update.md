@@ -3,6 +3,9 @@
 Update the properties of taskboardtaskformat object.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
+
+Group.ReadWrite.All AND Tasks.ReadWrite
+
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -10,20 +13,22 @@ PATCH /tasks/<id>/bucketTaskBoardFormat
 PATCH /tasks/<id>/progressTaskBoardFormat
 PATCH /tasks/<id>/assignedToTaskBoardFormat
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Value should be set to "Bearer (access-token)" |
+| If-Match | string | Value should be set to the ETag of the object |
+| Prefer | string | Value should be set to "return=representation" so that the updated object is returned in the response. This is advised so that the client can get the new ETag value of the updated object without doing an additional GET |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|orderHint|String||
+|orderHint|String|Used to set the relative order of tasks in the vertical on the task board view. Consider three tasks in the order of: `'O'`, `'P'`, `'Q'`. To move `'P'` to the top of the vertical, set its `'orderHint'` to smaller than that of `'O'`. The comparison is an ordinal string comparison.|
 
 ### Response
-If successful, this method returns a `200 OK` response code and updated [taskBoardTaskFormat](../resources/taskboardtaskformat.md) object in the response body.
+If successful, this method returns a `204 No Content` response code.
 ### Example
 ##### Request
 Here is an example of the request.
@@ -35,6 +40,7 @@ Here is an example of the request.
 PATCH https://graph.microsoft.com/beta/tasks/<id>/bucketTaskBoardFormat
 Content-type: application/json
 Content-length: 80
+If-Match: W/"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA6MDAn"
 
 {
   "type": "type-value",
@@ -50,17 +56,9 @@ Here is an example of the response.
   "@odata.type": "microsoft.graph.taskboardtaskformat"
 } -->
 ```http
-HTTP/1.1 200 OK
-Content-type: application/json
-Content-length: 80
-
-{
-  "type": "type-value",
-  "orderHint": "orderHint-value",
-  "id": "id-value"
-}
+HTTP/1.1 204 No Content
 ```
-
+To get the updated object, use the `Prefer` header. See Request Headers above.
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->
 <!-- {

@@ -3,16 +3,19 @@
 Use this API to create a new plan.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
+
+Group.ReadWrite.All AND Tasks.ReadWrite
+
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /oauth2PermissionGrants
+POST /plans
 
 ```
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Value should be set to "Bearer (access-token)" |
 
 ### Request body
 In the request body, supply a JSON representation of [plan](../resources/plan.md) object.
@@ -29,7 +32,7 @@ Here is an example of the request.
   "name": "create_plan_from_oauth2permissiongrants"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/oauth2PermissionGrants
+POST https://graph.microsoft.com/beta/plans
 ```
 In the request body, supply a JSON representation of [plan](../resources/plan.md) object.
 ##### Response

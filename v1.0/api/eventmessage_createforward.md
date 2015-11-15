@@ -6,7 +6,7 @@ The following **scopes** are required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-
+POST /users/<objectId>/messages/<id>/Microsoft.Graph.createForward
 
 ```
 ### Request headers
@@ -28,7 +28,7 @@ Here is an example of the request.
   "name": "eventmessage_createforward"
 }-->
 ```http
-
+POST https://graph.microsoft.com/v1.0/users/<objectId>/messages/<id>/Microsoft.Graph.createForward
 ```
 
 ##### Response
@@ -109,6 +109,7 @@ Content-length: 1546
   "isRead": true,
   "isDraft": true,
   "webLink": "webLink-value",
+  "meetingmessagetype": "meetingmessagetype-value",
   "createdDateTime": "datetime-value",
   "lastModifiedDateTime": "datetime-value",
   "changeKey": "changeKey-value",

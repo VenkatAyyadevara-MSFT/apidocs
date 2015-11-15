@@ -1,6 +1,6 @@
 # Get directoryRole
 
-Retrieve the properties and relationships of directoryrole object.
+Retrieve the properties and relationships of a directoryrole object.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request

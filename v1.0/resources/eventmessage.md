@@ -6,7 +6,7 @@ An EventMessage is typically found in the Inbox folder where it arrives as the r
 
 ### JSON representation
 
-Here is a JSON representation of the resource
+Here is a JSON representation of the resource  
 
 <!-- {
   "blockType": "resource",

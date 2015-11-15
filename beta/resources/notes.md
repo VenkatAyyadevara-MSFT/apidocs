@@ -26,25 +26,34 @@ https://graph.microsoft.com/beta/users/<objectId>/notes/
 https://graph.microsoft.com/beta/groups/<objectId>/notes/
 ```
 
-The following permission scopes provide levels of access to OneNote notebooks. Choosing permission scopes depends both on the location of the notebooks and your app's functionality. 
+The following permission scopes provide levels of access to OneNote notebooks. Choosing permission scopes depends both on the location of the notebooks you're targeting and your app's functionality. 
 
-|Scope|Permission|Description|
-|:------|:------|:------|
-| Notes.Create | Create pages in OneNote notebooks | Applies to notebooks owned by the current user. Can view the titles of your notebooks and sections; create new pages in any location. Cannot view or edit existing pages. |  
-| Notes.ReadWrite.CreatedByApp | Application-only OneNote notebook access | Applies to notebooks owned by the current user. Can view the titles of your notebooks and sections; create new pages; view and modify pages created by the app. Cannot view or modify pages created by other apps or in password protected sections. |  
-| Notes.Read | View OneNote notebooks | Applies to notebooks owned by the current user. Can view the contents of your notebooks and sections. Cannot create new pages; modify existing pages; access password protected sections. |  
-| Notes.ReadWrite | View and modify OneNote notebooks | Applies to notebooks owned by the current user. Can view the titles of your notebooks and sections; view and modify all your pages; create new pages. Cannot access password protected sections. |  
-| Notes.Read.All | View OneNote notebooks in your organization | Applies to all notebooks that the current user has access to. Can view the contents of notebooks and sections in all notebooks that the signed-in user has access to. Cannot create new pages; modify existing pages; access password protected sections. |  
-| Notes.ReadWrite.All | View and modify OneNote notebooks in your organization | Applies to all notebooks that the current user has access to. Can view the titles of notebooks and sections; view and modify all pages; create new pages in all notebooks that the signed-in user has access to. Cannot access password protected sections. |  
+**Scopes for personal notebooks in OneDrive for Business that are owned by the current user (Office 365)**
 
-If you're targeting group notebooks, you'll need to request one of the following Group permissions to get group IDs. These permissions also apply to the OneNote operations related to group notebooks, so you don't need to request Notes permissions if you're only targeting group notebooks and the Group permissions you request provide the read/write access you need.
+| Scope (enterprise) | Permission in Azure portal | Description |  
+|:-------|:------|:------|  
+| Notes.Create | Create pages in OneNote notebooks | Can view the titles of your notebooks and sections; create new pages in any location. Cannot view or edit existing pages. |  
+| Notes.ReadWrite.CreatedByApp | Application-only OneNote notebook access | Can view the titles of your notebooks and sections; create new pages; view and modify pages created by the app. Cannot view or modify pages created by other apps or in password protected sections. |  
+| Notes.Read | View OneNote notebooks | Can view the contents of your notebooks and sections. Cannot create new pages; modify existing pages; access password protected sections. |  
+| Notes.ReadWrite | View and modify OneNote notebooks | Can view the titles of your notebooks and sections; view and modify all your pages; create new pages. Cannot access password protected sections. |  
 
-|Scope|Permission|Description|
-|:------|:------|:------|
-| Group.Read.All | Read all groups | Applies to group notebooks. Can read all group properties and memberships; read group calendar and conversations on public groups and groups the signed in user is a member of. | 
-| Group.ReadWrite.All | Read and write all groups | Applies to group notebooks. Can create groups on behalf of the signed-in user and read all group properties and memberships; update group properties and memberships for groups the signed-in user owns; read and write group calendar and conversations on public groups and groups the signed-in user is a member of. | 
+**Scopes for personal notebooks shared by other users and group notebooks that the current user can access (Office 365)**
 
+| Scope (enterprise) | Permission in Azure portal | Description |  
+|:-------|:------|:------| 
+| Notes.Read.All | View OneNote notebooks in your organization | Can view the contents of notebooks and sections in all notebooks that the signed-in user has access to. Cannot create new pages; modify existing pages; access password protected sections. |  
+| Notes.ReadWrite.All | View and modify OneNote notebooks in your organization | Can view the titles of notebooks and sections; view and modify all pages; create new pages in all notebooks that the signed-in user has access to. Cannot access password protected sections. |  
 
+**Note:** Accessing SharePoint site notebooks through the Graph API is currently not supported.
+
+**Scopes for groups (Office 365)**
+
+If you're accessing group notebooks, you'll need a Groups permission scope to get the group ID. Currently, these permissions require administrator rights, but less restrictive access for a narrower scope will be available soon.
+
+| Scope (enterprise) | Permission in Azure portal | Description |  
+|:-------|:------|:------|  
+| Groups.Read.All | Read all groups | Can read all group properties and memberships; read group calendar and conversations on public groups and groups the signed in user is a member of. |  
+| Groups.ReadWrite.All | Read and write all groups | Can create groups on behalf of the signed-in user and read all group properties and memberships; update group properties and memberships for groups the signed-in user owns; read and write group calendar and conversations on public groups and groups the signed-in user is a member of. |  
 
 <!-- {
   "blockType": "resource",

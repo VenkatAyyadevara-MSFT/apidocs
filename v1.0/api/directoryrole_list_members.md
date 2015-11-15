@@ -1,6 +1,6 @@
 # List members
 
-Retrieve a list of directoryobject objects.
+Retrieve a list of the users that are assigned to the directory role.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request

@@ -1,6 +1,6 @@
 # List memberOf
 
-Retrieve a list of directoryobject objects.
+Get groups that the group is a direct member of. 
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request

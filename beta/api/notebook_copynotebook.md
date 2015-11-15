@@ -7,11 +7,10 @@ Notes.ReadWrite.CreatedByApp, Notes.ReadWrite, or Notes.ReadWrite.All
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /me/notes/notebooks/<id>/Microsoft.Graph.copyNotebook
-POST /users/<mail>/notes/notebooks/<id>/Microsoft.Graph.copyNotebook
-POST /users/<objectId>/notes/notebooks/<id>/Microsoft.Graph.copyNotebook
-POST /groups/<objectId>/notes/notebooks/<id>/Microsoft.Graph.copyNotebook
-
+POST /me/notes/notebooks/<id>/copyNotebook
+POST /users/<mail>/notes/notebooks/<id>/copyNotebook
+POST /users/<objectId>/notes/notebooks/<id>/copyNotebook
+POST /groups/<objectId>/notes/notebooks/<id>/copyNotebook
 ```
 ### Request headers
 | Name       | Type | Description|

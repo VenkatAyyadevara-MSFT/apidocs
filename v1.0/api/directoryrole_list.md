@@ -1,6 +1,6 @@
 # List directoryRoles
 
-Retrieve a list of directoryrole objects.
+List the directory roles that are activated in the tenant. 
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request

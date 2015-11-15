@@ -1,6 +1,6 @@
 # List owners
 
-Retrieve a list of directoryobject objects.
+Retrieve a list of the group's owners. The owners are a set of non-admin users who are allowed to modify the group object. 
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request

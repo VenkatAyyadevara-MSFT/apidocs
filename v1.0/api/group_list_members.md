@@ -1,6 +1,6 @@
 # List members
 
-Retrieve a list of directoryobject objects.
+Retrieve a list of the group's direct members. A group can have users, contacts, and other groups as members.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request

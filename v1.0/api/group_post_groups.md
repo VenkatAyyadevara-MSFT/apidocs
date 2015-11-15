@@ -1,6 +1,6 @@
 # Create group
 
-Use this API to create a new group.
+Use this API to create a new group. The request body contains the group to create. At a minimum, you must specify the required properties for the group. You can optionally specify any other writable properties. You can only create security groups with the Microsoft Graph. You cannot create mail-enabled security groups or mail distribution groups.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request
@@ -17,6 +17,14 @@ POST /groups
 ### Request body
 In the request body, supply a JSON representation of [group](../resources/group.md) object.
 
+The following table shows the properties that are required when you create a group.
+
+| Parameter | Type | Description|
+|:---------------|:--------|:----------|
+| displayName | string | The name to display in the address book for the group. |
+| mailEnabled | boolean | Must be **false**. This is because only pure security groups can be created using Microsoft Graph. |
+| mailNickname | string | The mail alias for the group. |
+| securityEnabled | boolean | Must be **true**. This is because only pure security groups can be created using Microsoft Graph. |
 
 ### Response
 If successful, this method returns `201, Created` response code and [group](../resources/group.md) object in the response body.

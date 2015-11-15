@@ -1,6 +1,6 @@
 # List ownedObjects
 
-Get the list of user's owned directoryobject objects.
+Get the list of directory objects that are owned by the user.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
 *User.Read; User.ReadWrite; User.Read.All; User.ReadWrite.All; Directory.Read.All; Directory.ReadWrite.All; Directory.AccessAsUser.All*

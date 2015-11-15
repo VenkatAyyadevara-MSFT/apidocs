@@ -6,7 +6,7 @@ The following **scopes** are required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-
+POST /users/<objectId>/messages/<id>/Microsoft.Graph.move
 
 ```
 ### Request headers
@@ -33,7 +33,7 @@ Here is an example of the request.
   "name": "eventmessage_move"
 }-->
 ```http
-
+POST https://graph.microsoft.com/v1.0/users/<objectId>/messages/<id>/Microsoft.Graph.move
 Content-type: application/json
 Content-length: 44
 
@@ -120,6 +120,7 @@ Content-length: 1546
   "isRead": true,
   "isDraft": true,
   "webLink": "webLink-value",
+  "meetingmessagetype": "meetingmessagetype-value",
   "createdDateTime": "datetime-value",
   "lastModifiedDateTime": "datetime-value",
   "changeKey": "changeKey-value",

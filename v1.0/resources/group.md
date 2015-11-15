@@ -135,24 +135,24 @@ Here is a JSON representation of the resource
 |allowExternalSenders|Boolean||
 |autoSubscribeNewMembers|Boolean||
 |creationOptions|String collection||
-|deletionTimestamp|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|description|String|An optional description for the group.|
-|dirSyncEnabled|Boolean|**true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default).|
-|displayName|String|The display name for the group. This property is required when a group is created and it cannot be cleared during updates. |
+|deletionTimestamp|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`.Read-only. |
+|description|String|An optional description for the group. |
+|dirSyncEnabled|Boolean|**true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter.|
+|displayName|String|The display name for the group. This property is required when a group is created and it cannot be cleared during updates. Supports $filter and $orderby.|
 |emailAddress|String||
 |groupTypes|String collection||
 |isFavorite|Boolean||
 |isPublic|Boolean||
 |isSubscribedByMail|Boolean||
-|lastDirSyncTime|DateTimeOffset|Indicates the last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|mail|String|The SMTP address for the group, for example, "serviceadmins@contoso.onmicrosoft.com".|
+|lastDirSyncTime|DateTimeOffset|Indicates the last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`. Read-only. Supports $filter.|
+|mail|String|The SMTP address for the group, for example, "serviceadmins@contoso.onmicrosoft.com". Read-only. Supports $filter.|
 |mailEnabled|Boolean|Specifies whether the group is mail-enabled. If the **securityEnabled** property is also **true**, the group is a mail-enabled security group; otherwise, the group is a Microsoft Exchange distribution group. Only (pure) security groups can be created using Microsoft Graph. For this reason, the property must be set **false** when creating a group and it cannot be updated using Microsoft Graph.|
-|mailNickname|String|The mail alias for the group. This property must be specified when a group is created.|
+|mailNickname|String|The mail alias for the group. This property must be specified when a group is created. Supports $filter.|
 |objectId|String|The unique identifier for the group. Inherited from [DirectoryObject](directoryobject.md). Key. Not nullable. Read-only.|
-|onPremisesSecurityIdentifier|String|Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud.|
-|provisioningErrors|[ProvisioningError](provisioningerror.md) collection|A collection of error details that are preventing this group from being provisioned successfully. Not nullable.            |
-|proxyAddresses|String collection| The **any** operator is required for filter expressions on multi-valued properties. Not nullable.             |
-|securityEnabled|Boolean|Specifies whether the group is a security group. If the mailEnabled property is also true, the group is a mail-enabled security group; otherwise it is a security group. Only (pure) security groups can be created using Microsoft Graph. For this reason, the property must be set **true** when creating a group.|
+|onPremisesSecurityIdentifier|String|Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Read-only. |
+|provisioningErrors|[ProvisioningError](provisioningerror.md) collection|A collection of error details that are preventing this group from being provisioned successfully. Read-only. Not nullable.            |
+|proxyAddresses|String collection| The **any** operator is required for filter expressions on multi-valued properties. Read-only. Not nullable. Supports $filter. |
+|securityEnabled|Boolean|Specifies whether the group is a security group. If the mailEnabled property is also true, the group is a mail-enabled security group; otherwise it is a security group. Only (pure) security groups can be created using Microsoft Graph. For this reason, the property must be set **true** when creating a group. Supports $filter.|
 |unseenCount|Int32||
 
 ### Relationships
@@ -166,8 +166,8 @@ Here is a JSON representation of the resource
 |drive|[drive](drive.md)| Read-only.|
 |events|[Event](event.md) collection| Read-only. Nullable.|
 |memberOf|[DirectoryObject](directoryobject.md) collection|Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.|
-|members|[DirectoryObject](directoryobject.md) collection| Users, contacts, and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Nullable.|
-|owners|[DirectoryObject](directoryobject.md) collection|The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Nullable.|
+|members|[DirectoryObject](directoryobject.md) collection| Users, contacts, and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.|
+|owners|[DirectoryObject](directoryobject.md) collection|The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.|
 |photo|[Photo](photo.md)| Read-only.|
 |rejectedSenders|[DirectoryObject](directoryobject.md) collection| Read-only. Nullable.|
 |threads|[ConversationThread](conversationthread.md) collection| Read-only. Nullable.|
@@ -185,7 +185,7 @@ Here is a JSON representation of the resource
 |[List conversations](../api/group_list_conversations.md) |[Conversation](conversation.md) collection| Get a Conversation object collection.|
 |[Create Event](../api/group_post_events.md) |[Event](event.md)| Create a new Event by posting to the events collection.|
 |[List events](../api/group_list_events.md) |[Event](event.md) collection| Get a Event object collection.|
-|[List memberOf](../api/group_list_memberof.md) |[DirectoryObject](directoryobject.md) collection| Get the groups that this group is a member of from the memberOf navigation property.|
+|[List memberOf](../api/group_list_memberof.md) |[DirectoryObject](directoryobject.md) collection| Get the groups that this group is a direct member of from the memberOf navigation property.|
 |[Create member](../api/group_post_members.md) |[DirectoryObject](directoryobject.md)| Add a user, contact, or group to this group by posting to the members navigation property (supported for security groups and mail-enabled security groups only).|
 |[List members](../api/group_list_members.md) |[DirectoryObject](directoryobject.md) collection| Get the users, contacts, and groups that are members of this group from the members navigation property.|
 |[Create owner](../api/group_post_owners.md) |[DirectoryObject](directoryobject.md)| Create a new owner for the group by posting to the owners navigation property (supported for security groups and mail-enabled security groups only).|

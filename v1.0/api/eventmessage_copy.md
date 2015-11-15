@@ -6,7 +6,7 @@ The following **scopes** are required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-
+POST https://graph.microsoft.com/v1.0/users/<objectId>/messages/<id>/Microsoft.Graph.copy
 
 ```
 ### Request headers
@@ -22,7 +22,7 @@ In the request body, provide a JSON object with the following parameters.
 |destinationId|String||
 
 ### Response
-If successful, this method returns `200, OK` response code and [Message](../resources/message.md) object in the response body.
+If successful, this method returns `201,Created` response code and [eventMessage](../resources/eventmessage.md) object in the response body.
 
 ### Example
 Here is an example of how to call this API.
@@ -33,7 +33,7 @@ Here is an example of the request.
   "name": "eventmessage_copy"
 }-->
 ```http
-
+POST https://graph.microsoft.com/v1.0/users/<objectId>/messages/<id>/Microsoft.Graph.copy
 Content-type: application/json
 Content-length: 44
 
@@ -50,7 +50,7 @@ Here is an example of the response.
   "@odata.type": "microsoft.graph.message"
 } -->
 ```http
-HTTP/1.1 200 OK
+HTTP/1.1 201 Created
 Content-type: application/json
 Content-length: 1546
 
@@ -120,6 +120,7 @@ Content-length: 1546
   "isRead": true,
   "isDraft": true,
   "webLink": "webLink-value",
+  "meetingmessagetype": "meetingmessagetype-value",
   "createdDateTime": "datetime-value",
   "lastModifiedDateTime": "datetime-value",
   "changeKey": "changeKey-value",

@@ -1,6 +1,7 @@
 # Create member
 
-Use this API to create a new member.
+Use this API to add one or more members to a security group or a mail-enabled security group through the members navigation property. You can add users, contacts, or other groups. Important: You can only add members to security groups and mail-enabled security groups.
+
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request

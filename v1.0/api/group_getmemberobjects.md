@@ -1,5 +1,5 @@
 # group: getMemberObjects
-
+Return all of the groups and directory roles that the group is a member of. The check is transitive. Note: Groups cannot be members of directory roles, so no directory roles will be returned.
 
 ### Prerequisites
 The following **scopes** are required to execute this API: 
@@ -21,10 +21,10 @@ In the request body, provide a JSON object with the following parameters.
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|securityEnabledOnly|Boolean||
+|securityEnabledOnly|Boolean|**true** to specify that only security groups that the group is a member of should be returned; **false** to specify that all groups that the group is a member of should be returned.|
 
 ### Response
-If successful, this method returns `200, OK` response code and String collection object in the response body.
+If successful, this method returns `200, OK` response code and String collection in the response body that contains the IDs of the groups that the group is a member of.
 
 ### Example
 Here is an example of how to call this API.

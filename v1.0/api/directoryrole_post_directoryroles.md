@@ -1,6 +1,7 @@
 # Create DirectoryRole
 
-Use this API to create a new DirectoryRole.
+Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. Only the Company Administrators  and the implicit Users directory roles are activated by default. To access and assign members to another directory role, you must first activate it with its corresponding directory role template ([DirectoryRoleTemplate](directoryroletemplate.md)).
+
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request
@@ -16,6 +17,12 @@ POST /directoryObjects
 
 ### Request body
 In the request body, supply a JSON representation of [DirectoryRole](../resources/directoryrole.md) object.
+
+The following table shows the properties that are required when you activate a directory role.
+
+|Required parameter | Type | Description|
+|:---------|:---------|:---------|
+|roleTemplateId | string | The ID of the [DirectoryRoleTemplate](directoryroletemplate.md) that the role is based on. This is the only property that may be specified in the request.|
 
 
 ### Response

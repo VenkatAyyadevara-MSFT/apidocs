@@ -1,5 +1,5 @@
 # group: checkMemberGroups
-
+Check for membership in a list of groups. The check is transitive.
 
 ### Prerequisites
 The following **scopes** are required to execute this API: 
@@ -21,7 +21,7 @@ In the request body, provide a JSON object with the following parameters.
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|groupIds|String||
+|groupIds|String|An array of group ids|
 
 ### Response
 If successful, this method returns `200, OK` response code and String collection object in the response body.

@@ -6,7 +6,7 @@ The following **scopes** are required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-
+GET /users/<objectId>/messages/<id>
 ```
 ### Optional query parameters
 |Name|Value|Description|
@@ -32,7 +32,7 @@ Here is an example of the request.
   "name": "get_eventmessage"
 }-->
 ```http
-
+GET https://graph.microsoft.com/v1.0/users/<objectId>/messages/<id>
 ```
 ##### Response
 Here is an example of the response.
@@ -112,6 +112,7 @@ Content-length: 1598
   "isRead": true,
   "isDraft": true,
   "webLink": "webLink-value",
+  "meetingmessagetype": "meetingmessagetype-value",
   "createdDateTime": "datetime-value",
   "lastModifiedDateTime": "datetime-value",
   "changeKey": "changeKey-value",

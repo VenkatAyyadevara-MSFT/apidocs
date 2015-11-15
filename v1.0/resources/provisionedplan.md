@@ -1,6 +1,6 @@
 # provisionedPlan resource type
 
-The **provisionedPlans** property of the [user](user.md) entity and the [organization](organization.md) entity is a collection of **ProvisionedPlan**.
+The **provisionedPlans** property of the [user](user.md) entity and the [organization](organization.md) entity is a collection of **provisionedPlan**.
 
 ### JSON representation
 

@@ -1,6 +1,6 @@
 # Get directoryRoleTemplate
 
-Retrieve the properties and relationships of directoryroletemplate object.
+Retrieve the properties and relationships of a directoryroletemplate object.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request

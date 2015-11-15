@@ -1,6 +1,6 @@
 # device resource type
 
-Represents a device registered in the directory. Inherits from [DirectoryObject].
+Represents a device registered in the directory. Inherits from [DirectoryObject](directoryobject.md).
 
 ### JSON representation
 
@@ -85,7 +85,6 @@ Here is a JSON representation of the resource
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[Get device](../api/device_get.md) | [device](device.md) |Read properties and relationships of device object.|
-|[Create](../api/device_get.md) | [device](device.md) |Create a device object.|
 |[Create registeredOwner](../api/device_post_registeredowners.md) |[DirectoryObject](directoryobject.md)| Add a user as a new owner of the device by posting to the registeredOwners navigation property.|
 |[List registeredOwners](../api/device_list_registeredowners.md) |[DirectoryObject](directoryobject.md) collection| Get the users that are registered owners of the device from the registeredOwners navigation property.|
 |[Create registeredUser](../api/device_post_registeredusers.md) |[DirectoryObject](directoryobject.md)| Add a registered user for the device by posting to the registeredUsers navigation property.|

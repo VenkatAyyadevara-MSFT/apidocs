@@ -3,16 +3,19 @@
 Use this API to create a new bucket.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
+
+Group.ReadWrite.All AND Tasks.ReadWrite
+
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /applications
+POST /buckets
 
 ```
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Value should be set to "Bearer (access-token)" |
 
 ### Request body
 In the request body, supply a JSON representation of [bucket](../resources/bucket.md) object.
@@ -29,7 +32,7 @@ Here is an example of the request.
   "name": "create_bucket_from_applications"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/applications
+POST https://graph.microsoft.com/beta/buckets
 ```
 In the request body, supply a JSON representation of [bucket](../resources/bucket.md) object.
 ##### Response

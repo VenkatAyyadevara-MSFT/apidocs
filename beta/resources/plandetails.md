@@ -1,6 +1,6 @@
 # planDetails resource type
 
-
+The PlanDetails resource represents the additional information about a plan. Each [plan](plan.md) object has a details object.
 
 ### JSON representation
 
@@ -32,14 +32,14 @@ Here is a JSON representation of the resource
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|category0Description|String||
-|category1Description|String||
-|category2Description|String||
-|category3Description|String||
-|category4Description|String||
-|category5Description|String||
-|id|String| Read-only.|
-|sharedWith|[userIdCollection](useridcollection.md)||
+|category0Description|String| Description of the category (or label) that can be applied to the task. |
+|category1Description|String| Description of the category (or label) that can be applied to the task. |
+|category2Description|String| Description of the category (or label) that can be applied to the task. |
+|category3Description|String| Description of the category (or label) that can be applied to the task. |
+|category4Description|String| Description of the category (or label) that can be applied to the task. |
+|category5Description|String| Description of the category (or label) that can be applied to the task. |
+|id|String| Read-only. Id of the plan. |
+|sharedWith|[userIdCollection](useridcollection.md)| List of user ids that this plan is shared with. If you are leveraging Office 365 Groups, use the Groups API to manage group membership to share the [group's](group.md) plan. You can also add existing members of the group to this collection though it is not required for them to access the plan owned by the group. |
 
 ### Relationships
 None
@@ -50,8 +50,7 @@ None
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[Get planDetails](../api/plandetails_get.md) | [planDetails](plandetails.md) |Read properties and relationships of planDetails object.|
-|[Update](../api/plandetails_update.md) | [planDetails](plandetails.md)	|Update planDetails object. |
-|[Delete](../api/plandetails_delete.md) | None |Delete planDetails object. |
+|[Update planDetails](../api/plandetails_update.md) | [planDetails](plandetails.md)	|Update planDetails object. |
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

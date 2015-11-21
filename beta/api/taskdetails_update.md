@@ -3,31 +3,35 @@
 Update the properties of taskdetails object.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
+
+Group.ReadWrite.All AND Tasks.ReadWrite
+
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /tasks/<id>/details
-PATCH /users/<objectId>/tasks/<id>/details
-PATCH /users/<objectId>/plans/<id>/tasks/<id>/details
+
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Value should be set to "Bearer (access-token)"|
+| If-Match | string | Value should be set to the ETag of the object |
+| Prefer | string | Value should be set to "return=representation" so that the updated object is returned in the response. This is advised so that the client can get the new ETag value of the updated object without doing an additional GET |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|checklist|checklistItemCollection||
-|completedBy|String||
-|description|String||
-|previewType|String| Possible values are: `automatic`, `noPreview`, `checklist`, `description`, `reference`.|
-|references|externalReferenceCollection||
+|checklist|[checklistItemCollection](../resources/checklistitemcollection.md)|The collection of checklist items on the task.|
+|completedBy|String|User id by which the task is completed. |
+|description|String|Description of a task. |
+|previewType|String|This sets the type of preview that shows up on the task. Possible values are: `automatic`, `noPreview`, `checklist`, `description`, `reference`.|
+|references|[externalReferenceCollection](../resources/externalreferencecollection.md)|The collection of references on the task. |
 
 ### Response
-If successful, this method returns a `200 OK` response code and updated [taskDetails](../resources/taskdetails.md) object in the response body.
+If successful, this method returns a `204 No Content` response code.
 ### Example
 ##### Request
 Here is an example of the request.
@@ -39,6 +43,7 @@ Here is an example of the request.
 PATCH https://graph.microsoft.com/beta/tasks/<id>/details
 Content-type: application/json
 Content-length: 181
+If-Match: W/"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA6MDAn"
 
 {
   "description": "description-value",
@@ -59,22 +64,9 @@ Here is an example of the response.
   "@odata.type": "microsoft.graph.taskdetails"
 } -->
 ```http
-HTTP/1.1 200 OK
-Content-type: application/json
-Content-length: 181
-
-{
-  "description": "description-value",
-  "previewType": "previewType-value",
-  "completedBy": "completedBy-value",
-  "references": {
-  },
-  "checklist": {
-  },
-  "id": "id-value"
-}
+HTTP/1.1 204 No Content
 ```
-
+To get the updated object, use the `Prefer` header. See Request Headers above.
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->
 <!-- {

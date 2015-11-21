@@ -7,8 +7,6 @@ The following **scopes** are required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /groups/<objectId>/memberOf
-GET /users/<objectId>/joinedGroups/<objectId>/memberOf
-GET /drive/root/createdByUser/joinedGroups/<objectId>/memberOf
 ```
 ### Optional query parameters
 |Name|Value|Description|

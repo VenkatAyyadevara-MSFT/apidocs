@@ -3,18 +3,20 @@
 Delete bucket.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
+
+Group.ReadWrite.All AND Tasks.ReadWrite
+
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /buckets/<id>
-DELETE /plans/<id>/buckets/<id>
-DELETE /users/<objectId>/plans/<id>/buckets/<id>
 
 ```
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Value should be set to "Bearer (access-token)" |
+| If-Match | string | Value should be set to the ETag of the object |
 
 ### Request body
 Do not supply a request body for this method.
@@ -32,6 +34,7 @@ Here is an example of the request.
 }-->
 ```http
 DELETE https://graph.microsoft.com/beta/buckets/<id>
+If-Match: W/"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA6MDAn"
 ```
 ##### Response
 Here is an example of the response.

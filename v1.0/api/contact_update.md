@@ -48,7 +48,7 @@ In the request body, supply the values for relevant fields that should be update
 |jobTitle|String|The contact’s job title.|
 |manager|String|The name of the contact's manager.
 |middleName|String|The contact's middle name.|
-|mobilePhone1|String|The contact's mobile phone number.|
+|mobilePhone|String|The contact's mobile phone number.|
 |nickName|String|The contact's nickname.|
 |officeLocation|String|The location of the contact's office.|
 |otherAddress|[PhysicalAddress](physicaladdress.md)|Other addresses for the contact.|

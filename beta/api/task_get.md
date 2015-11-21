@@ -2,25 +2,23 @@
 
 Retrieve the properties and relationships of task object.
 ### Prerequisites
-The following **scopes** are required to execute this API: 
+The following **scopes** are required to execute this API:
+ 
+Group.ReadWrite.All AND Tasks.ReadWrite
+
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /tasks/<id>
-GET /plans/<id>/tasks/<id>
-GET /buckets/<id>/tasks/<id>
+
 ```
 ### Optional query parameters
-|Name|Value|Description|
-|:---------------|:--------|:-------|
-|$count|none|The count of related entities can be requested by specifying the $count query option.|
-|$expand|string|Comma-separated list of relationships to expand and include in the response. See relationships table of [task](../resources/task.md) object for supported names. |
-|$select|string|Comma-separated list of properties to include in the response.|
+None
 
 ### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Value should be set to "Bearer (access-token)" |
 
 ### Request body
 Do not supply a request body for this method.
@@ -47,6 +45,7 @@ Here is an example of the response.
 HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 663
+ETag: W/"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA6MDAn"
 
 {
   "createdBy": "createdBy-value",
